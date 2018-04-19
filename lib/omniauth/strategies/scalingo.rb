@@ -37,12 +37,11 @@ module OmniAuth
       end
 
       extra do
-        {:raw_info => raw_info, :all_emails => emails}
+        {:raw_info => raw_info}
       end
 
       def raw_info
-        access_token.options[:mode] = :query
-        @raw_info ||= access_token.get('user').parsed
+        @raw_info ||= access_token.get('/v1/users/self').parsed['user']
       end
 
       def callback_url
