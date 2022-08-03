@@ -2,8 +2,8 @@
 require File.expand_path('../lib/omniauth-scalingo/version', __FILE__)
 
 Gem::Specification.new do |gem|
-  gem.authors       = ["Léo Unbekandt"]
-  gem.email         = ["leo@scalingo.com"]
+  gem.authors       = ["Léo Unbekandt", "Kevin Soltysiak"]
+  gem.email         = ["leo@scalingo.com", "kevin@scalingo.com"]
   gem.description   = %q{Official OmniAuth strategy for Scalingo.}
   gem.summary       = %q{Official OmniAuth strategy for Scalingo.}
   gem.homepage      = "https://github.com/Scalingo/omniauth-scalingo"
