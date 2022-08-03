@@ -9,6 +9,13 @@ Gem::Specification.new do |gem|
   gem.homepage      = "https://github.com/Scalingo/omniauth-scalingo"
   gem.license       = "MIT"
 
+  gem.metadata = {
+    "bug_tracker_uri" => "https://github.com/Scalingo/omniauth-scalingo/issues",
+    "documentation_uri" => "https://github.com/Scalingo/omniauth-scalingo",
+    "homepage_uri" => "https://github.com/Scalingo/omniauth-scalingo",
+    "source_code_uri" => "https://github.com/Scalingo/omniauth-scalingo",
+  }
+
   gem.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
   gem.files         = `git ls-files`.split("\n")
   gem.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
