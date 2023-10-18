@@ -1,13 +1,14 @@
-source 'https://rubygems.org'
+source "https://rubygems.org"
 
 # Specify your gem's dependencies in omniauth-scalingo.gemspec
 gemspec
 
 group :development, :test do
-  gem 'guard'
-  gem 'guard-rspec'
-  gem 'guard-bundler'
-  gem 'rb-fsevent'
-  gem 'growl'
-  gem 'rake'
+  gem "guard"
+  gem "guard-rspec"
+  gem "guard-bundler"
+  gem "rb-fsevent"
+  gem "growl"
+  gem "rake"
+  gem "standard", "~> 1.31"
 end

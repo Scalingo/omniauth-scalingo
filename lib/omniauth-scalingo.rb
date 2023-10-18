@@ -1,2 +1,2 @@
 require "omniauth-scalingo/version"
-require 'omniauth/strategies/scalingo'
+require "omniauth/strategies/scalingo"
