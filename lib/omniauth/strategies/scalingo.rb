@@ -1,12 +1,12 @@
-require 'omniauth-oauth2'
+require "omniauth-oauth2"
 
 module OmniAuth
   module Strategies
     class Scalingo < OmniAuth::Strategies::OAuth2
       option :client_options, {
-        :site => 'https://auth.scalingo.com',
-        :authorize_url => 'https://auth.scalingo.com/oauth/authorize',
-        :token_url => 'https://auth.scalingo.com/oauth/token'
+        site: "https://auth.scalingo.com",
+        authorize_url: "https://auth.scalingo.com/oauth/authorize",
+        token_url: "https://auth.scalingo.com/oauth/token"
       }
 
       def request_phase
@@ -23,32 +23,32 @@ module OmniAuth
         end
       end
 
-      uid { raw_info['id'].to_s }
+      uid { raw_info["id"].to_s }
 
       info do
         {
-          'uuid'       => raw_info['id'],
-          'username'   => raw_info['username'],
-          'email'      => raw_info['email'],
-          'first_name' => raw_info['first_name'],
-          'last_name'  => raw_info['last_name'],
-          'flags'      => raw_info['flags'],
+          "uuid" => raw_info["id"],
+          "username" => raw_info["username"],
+          "email" => raw_info["email"],
+          "first_name" => raw_info["first_name"],
+          "last_name" => raw_info["last_name"],
+          "flags" => raw_info["flags"]
         }
       end
 
       extra do
-        {:raw_info => raw_info}
+        {raw_info: raw_info}
       end
 
       def raw_info
-        @raw_info ||= access_token.get('/v1/users/self').parsed['user']
+        @raw_info ||= access_token.get("/v1/users/self").parsed["user"]
       end
 
       def callback_url
-        full_host + script_name + callback_path
+        full_host + callback_path
       end
     end
   end
 end
 
-OmniAuth.config.add_camelization 'scalingo', 'Scalingo'
+OmniAuth.config.add_camelization "scalingo", "Scalingo"
