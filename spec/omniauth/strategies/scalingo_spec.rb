@@ -2,7 +2,7 @@ require "spec_helper"
 
 describe OmniAuth::Strategies::Scalingo do
   let(:access_token) { instance_double("AccessToken", options: {}) }
-  let(:parsed_response) { instance_double("ParsedResponse") }
+  let(:parsed_response) { instance_spy("ParsedResponse") }
   let(:response) { instance_double("Response", parsed: parsed_response) }
 
   subject do
@@ -29,7 +29,7 @@ describe OmniAuth::Strategies::Scalingo do
 
   context "#raw_info" do
     it "should use relative paths" do
-      expect(access_token).to receive(:get).with("user").and_return(response)
+      expect(access_token).to receive(:get).with("/v1/users/self").and_return(response)
       expect(subject.raw_info).to eq(parsed_response)
     end
   end
