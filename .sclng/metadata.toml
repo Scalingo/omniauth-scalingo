@@ -1,0 +1,8 @@
+dependencies = []
+description = "OmniAuth strategy for authenticating to Scalingo"
+flags = ["lib"]
+languages = ["ruby"]
+owner = "team-ufs@scalingo.com"
+team = "UFS"
+version = "1.1.2"
+tier = 1
